@@ -101,7 +101,7 @@ The previous prototype searched curated quotes from `themes.json` using literal 
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 20.9+
 - Python 3.10+
 - [Gemini API key](https://aistudio.google.com/apikey)
 
