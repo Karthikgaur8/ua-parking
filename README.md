@@ -1,8 +1,8 @@
 # UA Parking Intelligence Platform
 
-UA Parking Intelligence Platform is a full-stack analytics and retrieval system that turns campus parking feedback into a structured dataset and evidence-backed recommendations for university decision-makers. It was built by Karthik Gaur for a private University of Alabama parking analysis project. This public repository is a synthetic-data demo: it preserves the product architecture and interface while excluding real student responses, real aggregate survey results, and real quotes.
+UA Parking Intelligence Platform is a full-stack analytics and retrieval system that turns student parking complaints into a structured dataset and evidence-backed recommendations for university administration. It was built by Karthik Gaur as SGA Treasurer at the University of Alabama in 2025-2026, and became the first comprehensive data-led case SGA brought to UA administration on parking. The survey reached nearly 1.8k students, roughly 10% of UA's undergraduate parking permit holders. Administration had received years of parking complaints but no structured data; this platform produced the analysis they did not have. Findings were presented to UA Parking in April 2026.
 
-The public demo dataset contains 420 fabricated example records. All headline numbers below come from the synthetic fixture files committed in `artifacts/`, not from the private survey.
+This public repository is a synthetic-data demo: it preserves the product architecture and interface while excluding real student responses, exact private aggregate results, and real quotes. The public demo dataset contains 420 fabricated example records. Dashboard numbers below come from the synthetic fixture files committed in `artifacts/`, not from the private survey.
 
 ---
 
