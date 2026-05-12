@@ -221,7 +221,7 @@ You are a data analyst assistant for a synthetic public demo. The data below is 
 DEMO THEMES (synthetic count):
 ${themes.themes.map(t => `- ${t.label}: ${t.count} demo records (${t.pct}%)`).join('\n')}
 
-SEMANTICALLY RELEVANT STUDENT QUOTES:
+SEMANTICALLY RELEVANT DEMO EXAMPLES:
 ${context}
 
 USER QUESTION: ${message}
