@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-12T19:13:23+00:00",
+    "input_file": "synthetic_public_demo",
+    "total_texts": 420,
+    "n_clusters": 6,
+    "method": "synthetic_demo_fixture",
+    "model": "none",
+    "demo_data": true
+  },
+  "themes": [
+    {
+      "id": 0,
+      "label": "Parking Availability",
+      "description": "Synthetic comments about competition for open spaces near busy class periods.",
+      "count": 176,
+      "pct": 41.9,
+      "quotes": [
+        "Synthetic example: I usually leave early because the first lot I try is already full.",
+        "Synthetic example: Mid-morning feels like the hardest time to find an open space.",
+        "Synthetic example: More real-time lot capacity signs would reduce circling.",
+        "Synthetic example: The issue is not one lot; it is knowing where open spaces are before arriving.",
+        "Synthetic example: A small reserve of short-term spaces near academic buildings would help."
+      ],
+      "segments": {
+        "by_arrival_time": {
+          "Before 8 AM": 8,
+          "8-10 AM": 31,
+          "10 AM-12 PM": 27,
+          "12-2 PM": 19,
+          "After 2 PM": 11
+        },
+        "by_mode": {
+          "Personal vehicle (car, motorbike)": 52,
+          "Walk": 7,
+          "Bike/scooter": 5,
+          "Public Transport": 8,
+          "Carpool/ride-share": 3
+        },
+        "skip_rate": 43.0
+      }
+    },
+    {
+      "id": 1,
+      "label": "Lot Distance",
+      "description": "Synthetic comments about walking time between assigned lots and classes.",
+      "count": 143,
+      "pct": 34.0,
+      "quotes": [
+        "Synthetic example: The walk is manageable on some days, but it becomes a problem between back-to-back classes.",
+        "Synthetic example: A shuttle loop from remote lots would make the assignment system feel more practical.",
+        "Synthetic example: Students with tight schedules need parking zones that better match class locations.",
+        "Synthetic example: Remote lots work better when the path is clear, safe, and predictable.",
+        "Synthetic example: Distance matters most when bad weather or evening classes are involved."
+      ],
+      "segments": {
+        "by_arrival_time": {
+          "Before 8 AM": 9,
+          "8-10 AM": 32,
+          "10 AM-12 PM": 28,
+          "12-2 PM": 20,
+          "After 2 PM": 12
+        },
+        "by_mode": {
+          "Personal vehicle (car, motorbike)": 53,
+          "Walk": 8,
+          "Bike/scooter": 6,
+          "Public Transport": 9,
+          "Carpool/ride-share": 4
+        },
+        "skip_rate": 46.7
+      }
+    },
+    {
+      "id": 2,
+      "label": "Permit Value",
+      "description": "Synthetic comments about perceived value, pricing, and permit expectations.",
+      "count": 112,
+      "pct": 26.7,
+      "quotes": [
+        "Synthetic example: A permit feels more valuable when students can reliably find a space in their zone.",
+        "Synthetic example: Pricing should reflect how far a student may need to park from class.",
+        "Synthetic example: Better communication about zone capacity would make the cost easier to understand.",
+        "Synthetic example: Students want clearer tradeoffs between cheaper remote parking and closer premium options.",
+        "Synthetic example: The frustration comes from paying for access and still needing extra search time."
+      ],
+      "segments": {
+        "by_arrival_time": {
+          "Before 8 AM": 10,
+          "8-10 AM": 33,
+          "10 AM-12 PM": 29,
+          "12-2 PM": 21,
+          "After 2 PM": 13
+        },
+        "by_mode": {
+          "Personal vehicle (car, motorbike)": 54,
+          "Walk": 9,
+          "Bike/scooter": 7,
+          "Public Transport": 10,
+          "Carpool/ride-share": 5
+        },
+        "skip_rate": 50.4
+      }
+    },
+    {
+      "id": 3,
+      "label": "Wayfinding",
+      "description": "Synthetic comments about signage, route clarity, and parking information.",
+      "count": 84,
+      "pct": 20.0,
+      "quotes": [
+        "Synthetic example: Clearer signs at lot entrances would reduce wrong turns during peak times.",
+        "Synthetic example: A map that updates by zone would help students choose a lot before driving across campus.",
+        "Synthetic example: Some lots are easy to miss if you do not already know the campus layout.",
+        "Synthetic example: The parking app should make zone boundaries easier to understand.",
+        "Synthetic example: Better wayfinding would make the current parking supply feel less confusing."
+      ],
+      "segments": {
+        "by_arrival_time": {
+          "Before 8 AM": 11,
+          "8-10 AM": 34,
+          "10 AM-12 PM": 30,
+          "12-2 PM": 22,
+          "After 2 PM": 14
+        },
+        "by_mode": {
+          "Personal vehicle (car, motorbike)": 55,
+          "Walk": 10,
+          "Bike/scooter": 8,
+          "Public Transport": 11,
+          "Carpool/ride-share": 6
+        },
+        "skip_rate": 54.1
+      }
+    },
+    {
+      "id": 4,
+      "label": "Transit Connections",
+      "description": "Synthetic comments about shuttle frequency, reliability, and first-mile/last-mile access.",
+      "count": 72,
+      "pct": 17.1,
+      "quotes": [
+        "Synthetic example: A more reliable shuttle schedule would make remote parking easier to accept.",
+        "Synthetic example: Students need confidence that the bus will arrive before class starts.",
+        "Synthetic example: Shorter waits at remote lots would reduce pressure on closer parking areas.",
+        "Synthetic example: Transit works best when the stops are visible and the route timing is predictable.",
+        "Synthetic example: Better bus information could turn some driving trips into shuttle trips."
+      ],
+      "segments": {
+        "by_arrival_time": {
+          "Before 8 AM": 12,
+          "8-10 AM": 35,
+          "10 AM-12 PM": 31,
+          "12-2 PM": 23,
+          "After 2 PM": 15
+        },
+        "by_mode": {
+          "Personal vehicle (car, motorbike)": 56,
+          "Walk": 11,
+          "Bike/scooter": 9,
+          "Public Transport": 12,
+          "Carpool/ride-share": 7
+        },
+        "skip_rate": 57.8
+      }
+    },
+    {
+      "id": 5,
+      "label": "Accessibility And Safety",
+      "description": "Synthetic comments about accessible spaces, lighting, and evening movement.",
+      "count": 49,
+      "pct": 11.7,
+      "quotes": [
+        "Synthetic example: Accessible spaces need to be easier to find near high-demand buildings.",
+        "Synthetic example: Lighting matters when students return to remote lots after evening classes.",
+        "Synthetic example: Safer walking routes would make remote parking more acceptable.",
+        "Synthetic example: Students want clearer information about accessible parking options.",
+        "Synthetic example: A predictable path from lot to building is part of the parking experience."
+      ],
+      "segments": {
+        "by_arrival_time": {
+          "Before 8 AM": 13,
+          "8-10 AM": 36,
+          "10 AM-12 PM": 32,
+          "12-2 PM": 24,
+          "After 2 PM": 16
+        },
+        "by_mode": {
+          "Personal vehicle (car, motorbike)": 57,
+          "Walk": 12,
+          "Bike/scooter": 10,
+          "Public Transport": 13,
+          "Carpool/ride-share": 8
+        },
+        "skip_rate": 61.5
+      }
+    }
+  ]
+}
