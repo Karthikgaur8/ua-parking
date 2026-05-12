@@ -71,7 +71,7 @@ flowchart TD
 The chat endpoint uses semantic retrieval over an embedded quote corpus rather than keyword matching over curated theme quotes.
 
 - `scripts/build_embeddings_index.py` is the private workflow for building a real quote index from `data/clean.csv`.
-- The public demo commits a synthetic `artifacts/embeddings_index.json`.
+- The public demo commits a synthetic `artifacts/embeddings_index.json` built from Gemini embeddings over synthetic text.
 - The demo index contains 24 synthetic quote documents.
 - Each document stores `id`, `row_id`, `source_column`, `text`, and `embedding`.
 - The index metadata records `model: models/gemini-embedding-001` and 768-dimensional vectors.
@@ -192,7 +192,8 @@ ua-parking/
 │   ├── load_qualtrics.py         # PII removal + anonymization (CSV/XLSX)
 │   ├── build_rollups.py          # Metrics with n/N format
 │   ├── build_themes_llm.py       # LLM thematic analysis (Gemini 2.5 Pro)
-│   ├── build_embeddings_index.py # Semantic chat embedding index
+│   ├── build_embeddings_index.py      # Private semantic chat embedding index
+│   ├── build_demo_embeddings_index.py # Public synthetic embedding refresh
 │   └── build_themes.py           # Legacy: K-Means clustering (deprecated)
 ├── artifacts/
 │   ├── metrics.json              # Synthetic public dashboard fixture

@@ -184,7 +184,7 @@ export default function ChatInterface({ initialMessage }: ChatInterfaceProps) {
                     </button>
                 </div>
                 <p className="text-xs text-gray-500 mt-2 text-center">
-                    Powered by Gemini AI • Searches synthetic demo comments only
+                    Powered by Gemini AI • Gemini embeddings over synthetic demo comments
                 </p>
             </form>
         </div>

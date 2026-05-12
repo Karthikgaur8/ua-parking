@@ -21,8 +21,8 @@ export default function ChatPage() {
                             <h2 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">How It Works</h2>
                             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                                 This AI assistant uses <strong>semantic Retrieval-Augmented Generation (RAG)</strong> to answer
-                                questions about a synthetic parking feedback dataset. It searches the embedded demo comments,
-                                finds the most relevant examples, and uses them to generate source-backed answers.
+                                questions about a synthetic parking feedback dataset. It searches demo comments embedded with
+                                Gemini, finds the most relevant examples, and uses them to generate source-backed answers.
                             </p>
                         </div>
                     </div>
