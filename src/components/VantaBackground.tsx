@@ -10,22 +10,23 @@ interface VantaEffect {
 
 export default function VantaBackground() {
     const vantaRef = useRef<HTMLDivElement>(null);
-    const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null);
+    const vantaEffectRef = useRef<VantaEffect | null>(null);
+    const threeLoadedRef = useRef(false);
+    const vantaLoadedRef = useRef(false);
     const [hasError, setHasError] = useState(false);
-    const [threeLoaded, setThreeLoaded] = useState(false);
-    const [vantaLoaded, setVantaLoaded] = useState(false);
 
     // Initialize Vanta when both scripts are ready
     const initVanta = useCallback(() => {
         if (typeof window === 'undefined') return;
-        if (vantaEffect) return; // Already initialized
+        if (vantaEffectRef.current) return; // Already initialized
         if (!vantaRef.current) return;
+        if (!threeLoadedRef.current || !vantaLoadedRef.current) return;
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const win = window as any;
 
         // Check that THREE is fully ready
-        if (!win.THREE || !win.THREE.PerspectiveCamera) {
+        if (!win.THREE || !win.THREE.Group || !win.THREE.PerspectiveCamera || !win.THREE.WebGLRenderer) {
             return;
         }
 
@@ -37,6 +38,7 @@ export default function VantaBackground() {
         try {
             const effect = win.VANTA.NET({
                 el: vantaRef.current,
+                THREE: win.THREE,
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
@@ -51,50 +53,44 @@ export default function VantaBackground() {
                 spacing: 15.00,
                 showDots: true,
             });
-            setVantaEffect(effect);
+            vantaEffectRef.current = effect;
         } catch (error) {
             console.error('Failed to initialize VANTA.NET:', error);
             setHasError(true);
         }
-    }, [vantaEffect]);
+    }, []);
 
     // Check if scripts are already loaded on mount (from previous navigation)
     useEffect(() => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const win = window as any;
 
-        if (win.THREE && win.THREE.PerspectiveCamera) {
-            setThreeLoaded(true);
+        if (win.THREE && win.THREE.Group && win.THREE.PerspectiveCamera && win.THREE.WebGLRenderer) {
+            threeLoadedRef.current = true;
         }
         if (win.VANTA && win.VANTA.NET) {
-            setVantaLoaded(true);
+            vantaLoadedRef.current = true;
         }
-    }, []);
-
-    // Try to initialize when both scripts are loaded
-    useEffect(() => {
-        if (threeLoaded && vantaLoaded) {
-            // Small delay to ensure everything is ready
-            const timer = setTimeout(initVanta, 50);
-            return () => clearTimeout(timer);
-        }
-    }, [threeLoaded, vantaLoaded, initVanta]);
+        const timer = setTimeout(initVanta, 50);
+        return () => clearTimeout(timer);
+    }, [initVanta]);
 
     // Cleanup on unmount
     useEffect(() => {
         return () => {
-            if (vantaEffect) {
-                vantaEffect.destroy();
-            }
+            vantaEffectRef.current?.destroy();
+            vantaEffectRef.current = null;
         };
-    }, [vantaEffect]);
+    }, []);
 
     const handleThreeLoad = () => {
-        setThreeLoaded(true);
+        threeLoadedRef.current = true;
+        initVanta();
     };
 
     const handleVantaLoad = () => {
-        setVantaLoaded(true);
+        vantaLoadedRef.current = true;
+        initVanta();
     };
 
     const handleScriptError = () => {
@@ -104,7 +100,7 @@ export default function VantaBackground() {
 
     return (
         <>
-            {/* Load THREE.js r134 (required for Vanta BIRDS) */}
+            {/* Load THREE.js r134 (required for Vanta NET) */}
             <Script
                 src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
                 strategy="afterInteractive"
@@ -113,7 +109,7 @@ export default function VantaBackground() {
             />
             {/* Load Vanta NET */}
             <Script
-                src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"
+                src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"
                 strategy="afterInteractive"
                 onLoad={handleVantaLoad}
                 onError={handleScriptError}
